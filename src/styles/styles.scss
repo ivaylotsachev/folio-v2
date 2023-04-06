@@ -1,0 +1,35 @@
+@import "./reset.scss";
+@import "./variables.scss";
+@import "./grid.scss";
+@import "./typo.scss";
+@import "./scrollbar.scss";
+
+html {
+  scroll-behavior: initial;
+}
+
+html,
+body {
+  min-height: 100%;
+  height: auto;
+  &.js-scroll-disabled {
+    overflow: hidden;
+    pointer-events: none;
+    cursor: none;
+    .cursor {
+      display: none;
+    }
+  }
+}
+
+body {
+  background-color: white;
+}
+
+.mask {
+  overflow: hidden;
+}
+
+.border {
+  border: 2px solid lightgreen;
+}
