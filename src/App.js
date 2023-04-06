@@ -1,5 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
+
+import HomeView from './views/home-view/HomeView';
+
 const App = () => {
-    return <div className='App'>app</div>;
+    return (
+        <main className='App'>
+            <Routes>
+                <Route path='/' name='home' element={<HomeView />} />
+            </Routes>
+        </main>
+    );
 };
 
 export default App;
