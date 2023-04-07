@@ -1,0 +1,6 @@
+.home-page {
+    overflow: hidden;
+    & > div {
+        flex: 0 0 50%;
+    }
+}
