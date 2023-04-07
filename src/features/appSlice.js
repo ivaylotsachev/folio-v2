@@ -3,12 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 const appSlice = createSlice({
     name: 'app',
     initialState: {
-        isLoading: true,
+        isBusy: false,
+        initialLoading: true,
         isProfileImageRight: true,
     },
     reducers: {
-        setIsLoading: (state, action) => {
-            state.isLoading = action.payload;
+        setIsBusy: (state, action) => {
+            state.isBusy = action.payload
+        },
+        setInitialLoading: (state, action) => {
+            state.initialLoading = action.payload;
         },
         setIsProfileImageRight: (state, action) => {
             state.isProfileImageRight = action.payload;
@@ -16,5 +20,5 @@ const appSlice = createSlice({
     },
 });
 
-export const { setIsLoading, setIsProfileImageRight } = appSlice.actions;
+export const { setIsBusy, setInitialLoading, setIsProfileImageRight } = appSlice.actions;
 export default appSlice.reducer;

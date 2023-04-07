@@ -34,4 +34,12 @@
             margin-bottom: 50px;
         }
     }
+
+    .navigator {
+        color: white;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        z-index: 20;
+    }
 }

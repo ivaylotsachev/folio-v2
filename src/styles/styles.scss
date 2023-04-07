@@ -10,20 +10,18 @@ html {
 
 html,
 body {
-  min-height: 100%;
-  height: auto;
+
   &.js-scroll-disabled {
     overflow: hidden;
     pointer-events: none;
     cursor: none;
-    .cursor {
-      display: none;
-    }
   }
 }
 
 body {
   background-color: white;
+  line-height: 1;
+  visibility: hidden;
 }
 
 .mask {

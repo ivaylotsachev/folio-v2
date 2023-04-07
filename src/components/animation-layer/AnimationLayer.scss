@@ -1,0 +1,13 @@
+.animation-layer {
+    background: var(--mainBlack);
+    color: var(--mainWhite);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    font-size: 10vw;
+
+    .title {
+        position: absolute;
+    }
+}
