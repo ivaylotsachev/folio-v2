@@ -10,7 +10,6 @@ html {
 
 html,
 body {
-
   &.js-scroll-disabled {
     overflow: hidden;
     pointer-events: none;
@@ -22,6 +21,10 @@ body {
   background-color: white;
   line-height: 1;
   visibility: hidden;
+}
+
+.js-events-none {
+  pointer-events: none;
 }
 
 .mask {

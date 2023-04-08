@@ -1,12 +1,14 @@
 import { setIsProfileImageRight } from '../../features/appSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import classNames from 'classnames';
 import Profile from "../../components/profile/Profile";
 import WorksList from "../../components/works-list/WorksList";
 import gsap from 'gsap';
-import "./HomeView.scss";;
+
+import "./HomeView.scss";
 
 const HomeView = () => {
-    const { isProfileImageRight } = useSelector(state => state.app);
+    const { isProfileImageRight, navOpened } = useSelector(state => state.app);
     const dispatch = useDispatch();
 
     const handleClick = () => {
@@ -34,7 +36,10 @@ const HomeView = () => {
         }
     }
 
-    return <section className="page home-page flex h-100-vh">
+    return <section className={classNames({
+        'page home-page flex h-100-vh': true,
+        'js-events-none': navOpened
+    })}>
         <WorksList />
         <Profile onclick={handleClick}/>
     </section>

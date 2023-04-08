@@ -1,0 +1,13 @@
+.menu-button {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: orangered;
+    color: white;
+    bottom: 40px;
+    left: 50%;
+    z-index: 51;
+    transform: translateX(-50%);
+    cursor: pointer;
+}

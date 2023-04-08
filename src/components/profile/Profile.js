@@ -11,11 +11,14 @@ import rightTwo from '../../assets/right_2.jpg'
 import "./Profile.scss"
 
 const Profile = ({ onclick }) => {
-    const { isProfileImageRight } = useSelector(state => state.app);
+    const { isProfileImageRight, navOpened } = useSelector(state => state.app);
     const [activeImage, setActiveImage] = useState(3);
+    const [hideImage, setHideImage] = useState(false);
     const imageContainer = useRef(null)
 
     const handleMouseMove = (e) => {
+        if (navOpened) return;
+
         const windowWidth = window.innerWidth;
         const baseWidth = Math.round(windowWidth / 5);
         const mouseXPos = e.clientX;
@@ -28,7 +31,12 @@ const Profile = ({ onclick }) => {
     }
 
     useEffect(() => {
-        window.addEventListener('mousemove', (e) => handleMouseMove(e));
+        console.log('navOpe', navOpened);
+        setHideImage(navOpened)
+    }, [navOpened])
+
+    useEffect(() => {
+        window.addEventListener('mousemove', handleMouseMove);
     }, [])
 
     return (
@@ -46,10 +54,12 @@ const Profile = ({ onclick }) => {
                 ref={imageContainer}
                 className="profile-image-container h-100 w-100">
                 <img className={classNames({
+                    'js-hidden': navOpened,
                     'profile-image': true,
                     'js-active-image': activeImage === 5
                 })} src={leftTwo} alt="" />
                 <img className={classNames({
+                    'js-hidden': navOpened,
                     'profile-image': true,
                     'js-active-image': activeImage === 4
                 })} src={leftOne} alt="" />
@@ -58,10 +68,12 @@ const Profile = ({ onclick }) => {
                     'js-active-image': activeImage === 3
                 })} src={centerImage} alt="" />
                  <img className={classNames({
+                    'js-hidden': hideImage,
                     'profile-image': true,
                     'js-active-image': activeImage === 2
                 })} src={rightOne} alt="" />
                 <img className={classNames({
+                    'js-hidden': navOpened,
                     'profile-image': true,
                     'js-active-image': activeImage === 1
                 })} src={rightTwo} alt="" />

@@ -23,6 +23,9 @@
         &.js-active-image {
             z-index: 1;
         }
+        &.js-hidden {
+            opacity: 0;
+        }
     }
 
     .profile-info-container {

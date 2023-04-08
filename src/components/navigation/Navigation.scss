@@ -1,0 +1,16 @@
+.app-nav {
+    background: var(--mainBlack);
+    color: var(--mainWhite);
+    height: 50vh;
+    position: absolute;
+    top: 50%;
+    font-size: 4vw;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+
+    .app-nav-item {
+        will-change: transform;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+    }
+}

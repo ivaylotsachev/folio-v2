@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { setIsBusy } from "../../features/appSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { gsap } from 'gsap';
+import { setInitialLoading } from "../../features/appSlice";
 
 import "./AnimationLayer.scss";
 import lettering from "../../utils/lettering";
@@ -38,7 +39,9 @@ const AnimationLayer = () => {
                 .to(".title-two p", {yPercent: -110 }, 4)
                 .to(".animation-layer", {yPercent: -110 }, delay)
                 .from(".profile-image-container", {scale: 1.4}, delay - 0.2)
-                .from(".works-container", {yPercent: 110 }, delay - 0.2)
+                .from(".works-container", {yPercent: 110, onComplete: () => {
+                    dispatch(setInitialLoading(false))
+                } }, delay - 0.2)
         }
     }, [])
 
