@@ -31,12 +31,11 @@ const Profile = ({ onclick }) => {
     }
 
     useEffect(() => {
-        console.log('navOpe', navOpened);
         setHideImage(navOpened)
     }, [navOpened])
 
     useEffect(() => {
-        window.addEventListener('mousemove', handleMouseMove);
+        document.querySelector(".home-page").addEventListener('mousemove', handleMouseMove);
     }, [])
 
     return (

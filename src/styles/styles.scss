@@ -27,6 +27,7 @@ body {
   position: relative;
   z-index: 1;
   background-color: var(--mainWhite);
+  min-height: 100vh;
 }
 
 .js-events-none {

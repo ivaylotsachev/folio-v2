@@ -9,11 +9,16 @@ const appSlice = createSlice({
         isBusy: false,
         initialLoading: true,
         isProfileImageRight: true,
-        activePage: ""
+        activePage: "",
+        navigate: false,
     },
     reducers: {
+        setNavigate: (state, action) => {
+            state.navigate = action.payload
+        },
         setActivePage: (state, action) => {
-            const page = action.payload.split("/")[1] || 'Home'
+            const page = action.payload.split("/")[1] || 'home'
+            console.log("action page", action.payload)
             state.activePage = page
         },
         setNavOpened: (state, action) => {
@@ -31,5 +36,6 @@ const appSlice = createSlice({
     },
 });
 
-export const { setActivePage, setIsBusy, setInitialLoading, setIsProfileImageRight, setNavOpened } = appSlice.actions;
+export const { setNavigate, setActivePage, setIsBusy, setInitialLoading, setIsProfileImageRight, setNavOpened } = appSlice.actions;
+
 export default appSlice.reducer;

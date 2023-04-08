@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 
 const navAnimation = (navOpened) => {
-    const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "Power3.easeInOut", stagger: 0.05}})
+    const tl = gsap.timeline({ defaults: { duration: 0.6, ease: "Power3.easeInOut", stagger: 0.02}})
 
     if (navOpened) {
         tl
@@ -12,8 +12,8 @@ const navAnimation = (navOpened) => {
             0.1)
     } else {
         tl
-        .to(".app-nav-item", { yPercent: 110, scale: 0.8 })
-        .to(".page", { yPercent: 0 }, 0.1)
+            .to(".app-nav-item", { yPercent: 100, scale: 0.8 }, 0)
+            .to(".page", { yPercent: 0 }, 0.2)
     }
 }
 

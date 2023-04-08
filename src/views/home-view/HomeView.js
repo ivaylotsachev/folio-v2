@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { setIsProfileImageRight } from '../../features/appSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames';
@@ -10,8 +11,15 @@ import "./HomeView.scss";
 document.title = 'Ivaylo Tsachev - Folio - Home'
 
 const HomeView = () => {
-    const { isProfileImageRight, navOpened } = useSelector(state => state.app);
+    const { isProfileImageRight, navOpened, initialLoading } = useSelector(state => state.app);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (!initialLoading) {
+            gsap.from(".profile-image", {scale: 1.2, delay: 1.3, ease: "Power4.easeInOut"})
+            gsap.from(".works-container", {scale: 1.2, yPercent: 50, delay: 1.3, ease: "Power4.easeInOut"})
+        }
+    }, [])
 
     const handleClick = () => {
         document.querySelector(".profile-image-container").classList.add("js-events-none");
