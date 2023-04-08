@@ -1,5 +1,4 @@
 const lettering = (node, text) => {
-    console.log(node);
     [...text].forEach((ch, index) => {
         const mask = document.createElement('div');
         const char = document.createElement('p');

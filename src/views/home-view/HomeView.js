@@ -7,6 +7,8 @@ import gsap from 'gsap';
 
 import "./HomeView.scss";
 
+document.title = 'Ivaylo Tsachev - Folio - Home'
+
 const HomeView = () => {
     const { isProfileImageRight, navOpened } = useSelector(state => state.app);
     const dispatch = useDispatch();
